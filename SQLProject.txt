@@ -1,0 +1,59 @@
+create table  People(
+  ID integer primary key autoincrement,
+  Name varchar(50),
+  Age integer,
+  Height integer,
+  City varchar(50),
+  FavoriteColor varchar(50))
+insert into People(Name, Age, Height, City, FavoriteColor)
+values ('Bradley', 27, 75, 'Dallas', 'White')
+insert into People(Name, Age, Height, City, FavoriteColor)
+values ('Daniel', 25, 73, 'Houston', 'Green')
+insert into People(Name, Age, Height, City, FavoriteColor)
+values ('Lucy', 50, 52, 'Houston', 'Blue')
+ insert into People(Name, Age, Height, City, FavoriteColor)
+values ('Jim', 60, 74, 'Houston', 'Purple')
+ insert into People(Name, Age, Height, City, FavoriteColor)
+ values ('Shelly', 49, 69, 'Houston', 'Blue')
+select * from People order by height;
+select * from People order by height asc;
+select * from People order by age desc;
+select * from People order by age = 20;
+select * from People where age > 20;
+select * from People where age = 18;
+select * from People where age < 20 or age > 30;
+select * from People where age != 27;
+select * from People where FavoriteColor != 'red';
+select * from People where FavoriteColor != 'red' and FavoriteColor != 'Blue';
+select * from People where FavoriteColor = 'Orange' or FavoriteColor = 'Green';
+select * from People where FavoriteColor in ('Orange', 'Green', 'Blue');
+select * from People where FavoriteColor in ('Yellow', 'Purple');
+create table Orders(
+PersonID integer primary key autoincrement,
+ProductName varchar(50),
+ProductPrice integer,
+Quantity integer)
+insert into Orders(PersonID,ProductName,ProductPrice,Quantity)
+values(0,'Steak',50,9001);
+select * from Orders;
+select sum(quantity) from Orders;
+select sum(ProductPrice*quantity) from Orders;
+select sum(ProductPrice*quantity) from Orders where PersonID = 0;
+Insert into Artist (ArtistID, Name)
+values (9001,'Billy Joel')’
+select * from Artist order by Name desc limit 10;
+select * from Artist order by Name asc limit 5;
+select * from Artist where Name like 'Black%';
+select * from Artist where Name like '%Black%';
+select Firstname, Lastname from Employee where City = 'Calgary';
+select Firstname, Lastname, max(BirthDate) from Employee;
+select Firstname, Lastname, min(BirthDate) from Employee;
+select * from employee where reportsto = 2;
+select count(*) from employee where city = 'Lethbridge';
+select * from invoice where BillingCountry = 'USA';
+select max(total) from invoice;
+select min(total) from invoice;
+select count(*) from invoice where total<5;
+select count(*) from invoice where billingstate in('CA', 'TX', 'AZ');
+select avg(total) from invoice;
+select sum(total) from invoice;
